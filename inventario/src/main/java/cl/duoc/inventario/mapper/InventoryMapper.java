@@ -25,14 +25,6 @@ public class InventoryMapper {
 
     }
 
-    public List<InventoryResponseDto> toDtoList(List<Inventory> inventories,
-                                                Map<Long, ProductDto> products){
-        return inventories.stream()
-                .map(inventory -> toDto(inventory, products.get(inventory.getProductId())))
-                .toList();
-    }
-
-
     public Inventory toEntity(InventoryRequestDto dto){
         Inventory inventory = new Inventory();
 

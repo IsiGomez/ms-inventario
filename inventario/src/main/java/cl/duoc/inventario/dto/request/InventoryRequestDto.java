@@ -12,6 +12,9 @@ import lombok.Setter;
 @AllArgsConstructor @NoArgsConstructor
 public class InventoryRequestDto {
 
+    @NotNull(message = "La ID del inventario es obligatoria")
+    private Long id;
+
     @NotNull(message = "La ID del producto es obligatoria")
     private Long productId;
 
