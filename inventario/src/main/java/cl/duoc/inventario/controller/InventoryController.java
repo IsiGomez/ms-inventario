@@ -24,7 +24,7 @@ public class InventoryController {
 
     @Operation(summary = "Actualizar stock de producto",
             tags = {"Módulo de Inventario → 2. Acciones de Inventario"})
-    @PutMapping("/update")
+    @PatchMapping("/update")
     public ResponseEntity<InventoryResponseDto> updateStock(@Valid @RequestBody InventoryRequestDto request){
         return ResponseEntity.ok(service.actualizarStock(request));
     }
