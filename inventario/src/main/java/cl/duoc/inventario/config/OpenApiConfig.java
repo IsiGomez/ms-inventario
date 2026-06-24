@@ -28,12 +28,13 @@ public class OpenApiConfig {
                                         .name(SECURITY_SCHEME_NAME)
                                         .type(SecurityScheme.Type.HTTP)
                                         .scheme("bearer")
-                                        .bearerFormat("JWT")))
+                                        .bearerFormat("JWT")
+                                        .description("Ingresa directamente tu token JWT aquí")))
                 .addSecurityItem(new SecurityRequirement().addList(SECURITY_SCHEME_NAME));
     }
 
     @Bean
-    public GroupedOpenApi categoriesApi() {
+    public GroupedOpenApi inventoryApi() {
         return GroupedOpenApi.builder()
                 .group("1. Módulo de Inventario")
                 .pathsToMatch("/api/v1/inventory/**")
